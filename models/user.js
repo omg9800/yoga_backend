@@ -21,12 +21,7 @@ module.exports = (sequelize, Sequelize) => {
       validate:{
         max:60,min:18
       }
-    },
-    email: {
-      type: Sequelize.STRING,
-      unique: true,
-      allowNull: false,
-    },
+    },email: { type: Sequelize.STRING, allowNull: false, unique: 'email'},
     phone:{
       type:Sequelize.STRING,
       allowNull: false,

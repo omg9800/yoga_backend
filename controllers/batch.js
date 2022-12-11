@@ -4,7 +4,7 @@ const {validate,CompletePayment}=require('../utils/utils')
 
 
 module.exports.getAllBatch = (req, res) => {
-  Batch.findAll()
+  Batch.findAll({attributes: {exclude: ['createdAt','updatedAt']}})
     .then((batches) => {
       res.json({"success":true,"batches":batches});
     })
@@ -19,7 +19,8 @@ module.exports.getBatch = (req, res) => {
   Batch.findOne({
     where:{
       id:id
-    }
+    },
+    attributes: {exclude: ['createdAt','updatedAt']}
   })
     .then((batch) => {
       res.json(batch);
