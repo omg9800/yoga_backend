@@ -9,11 +9,9 @@ module.exports.validate=(sTime,eTime,batches)=>{
      return true;
 }
 
-module.exports.CompletePayment=()=>{
-    let myPromise = new Promise(function(resolve, reject) {
-        let check = 0;
-            
-        if (check == 0) 
+module.exports.CompletePayment=(check)=>{
+    let myPromise = new Promise(function(resolve, reject) {    
+        if (check == 1) 
           resolve({"success":true,"message":"Payment successful!"});
         else 
           reject({"success":false,"message":"Payment Failed!"});

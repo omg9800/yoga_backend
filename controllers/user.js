@@ -36,6 +36,7 @@ module.exports.getUser = (req, res) => {
       if(exist) return res.status(400).send({"success":false ,"message":"User already exists!"})
       
       const user=await User.create({firstName,lastName,age,phone,email,password})
+      console.log(user);
       const salt = await bcrypt.genSalt(10);
       user.password = await bcrypt.hash(user.password, salt);
       await user.save();

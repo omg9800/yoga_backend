@@ -5,11 +5,11 @@ const Enrolment = sequelize.define("enrolments", {
        type:Sequelize.INTEGER,
        allowNull:false,
        autoIncrement:true,
-       primaryKey: true,
+       primaryKey: true
       },
       enroledMonth: {
         type: Sequelize.DATEONLY,
-        allowNull: false,
+        allowNull: false
       }
       
     });

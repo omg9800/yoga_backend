@@ -21,8 +21,6 @@ require('./config/connection')
  }).catch(e=>console.log(e))
 
  sequelize.sync({ alter: true });
-//  const Batch=db.batches
-//  Batch.sync({ force: true })
 
  app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
